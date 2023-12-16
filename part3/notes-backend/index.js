@@ -1,9 +1,9 @@
 // NNotes-backend/index.js
 const express = require('express');
 const app = express();
-require('dotenv').config();
-
 app.use(express.json());
+
+require('dotenv').config();
 
 // middleware to log all requests
 const requestLogger = (request, response, next) => {
@@ -17,6 +17,8 @@ app.use(requestLogger)
 
 const cors = require('cors');
 app.use(cors());
+
+app.use(express.static('dist'))
 
 
 let notes = [
