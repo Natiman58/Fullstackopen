@@ -10,6 +10,9 @@ app.use(morgan(':method :url :status :res[content-length] - :response-time ms :r
 const cors = require('cors');
 app.use(cors());
 
+// To serve the static file of the frontend
+app.use(express.static('dist'));
+
 let notes = [
     {
       "id": 1,
