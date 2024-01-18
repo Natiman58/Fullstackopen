@@ -1,3 +1,4 @@
+/*
 const mongoose = require('mongoose')
 
 if (process.argv.legth<3) {
@@ -38,10 +39,12 @@ Note.find({}).then(result => {
 	result.forEach(note => {
 		console.log(note)
 	})
-	//mongoose.connection.close()
+	mongoose.connection.close()
 })
+
 note1.save()
 note2.save()
 note3.save()
 
 console.log('notes saved!')
+*/

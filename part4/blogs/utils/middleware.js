@@ -19,7 +19,7 @@ const errorHandler = (error, request, response, next) => {
     } else if(error.name === 'ValidationError') {
         return response.status(400).json({ error: error.message })
     } else if (error.name === 'JsonWebTokenError') {
-        return response.status(401).json({ error: error.message })
+        return response.status(401).json({ error: error.message})
     } else if (error.name === 'TokenExpiredError') {
         return response.status(401).json({ error: 'token expired'})
     }
@@ -38,7 +38,7 @@ const userExtractor = (request, response, next) => {
     // extract user(id) from request
     const user = request.body.user
     if (!user) {
-        return response.status(401).json({ error: 'token missing or invalid'})
+        return response.status(401).json({ error: 'user not found in request'})
     }
     request.user = user
     next()

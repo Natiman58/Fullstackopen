@@ -1,0 +1,59 @@
+{
+  "notes": [
+    {
+      "content": "the app state is in redux store",
+      "important": true,
+      "id": 1
+    },
+    {
+      "content": "state changes are made with actions",
+      "important": true,
+      "id": 2
+    },
+    {
+      "content": "note new",
+      "important": false,
+      "id": 3
+    },
+    {
+      "content": "more note usingt json server",
+      "important": false,
+      "id": 4
+    },
+    {
+      "content": "adding one more note",
+      "important": false,
+      "id": 5
+    },
+    {
+      "content": "adding the id check",
+      "important": false,
+      "id": 6
+    },
+    {
+      "content": "clearing up",
+      "important": false,
+      "id": 7
+    },
+    {
+      "content": "one more is coming using the use mutation lib",
+      "important": true,
+      "id": 8
+    },
+    {
+      "content": "automacic rendering by invalidationg the first query",
+      "important": false,
+      "id": 9
+    },
+    {
+      "content": "new note by manually updating query state",
+      "important": true,
+      "id": 10
+    },
+    {
+      "content": "adding",
+      "important": true,
+      "id": 11
+    }
+  ]
+}

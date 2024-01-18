@@ -29,7 +29,6 @@ const Persons = ({persons, setPersons}) => {
       )}
     </div>
   )
-
 }
 
 const PersonForm = ({addNewPerson, newName, handleChange, newNum, handleNumChange}) => {
@@ -42,7 +41,7 @@ const PersonForm = ({addNewPerson, newName, handleChange, newNum, handleNumChang
   )
 }
 
-const Filter = ({filter, handleFilter}) => {
+const Filter = ({filter, handleFilter, setPersons, persons}) => {
   return (
     <div>
       filter shown with: <input value={filter} onChange={handleFilter} />
@@ -66,7 +65,6 @@ const App = () => {
     console.log('effect')
     contacts.getAll().then(initilContacts => setPersons(initilContacts))
   }, [])
-  console.log('render', persons.length, 'persons')
 
 
   const addNewPerson = (event) => {
@@ -79,8 +77,12 @@ const App = () => {
         const updatedPerson = { ...existingPerson, number: newNum }
         contacts.update(existingPerson.id, updatedPerson).then(returnedPerson => {
           setPersons(persons.map(person => person.id !== existingPerson.id ? person : returnedPerson))
+          setMessage(`Updated ${returnedPerson.name} successuflly!`)
+          setTimeout(()=> {setMessage(null)}, 5000)
+          setType('success')
         }).catch(error => {
-          setMessage(`Information of ${existingPerson.name} has already been removed from server`)
+          //setMessage(`Information of ${existingPerson.name} has already been removed from server`)
+          setMessage(error.response.data.error)
           setTimeout(()=> {setMessage(null)}, 5000)
           setType('error')
         });
@@ -99,6 +101,9 @@ const App = () => {
         setTimeout(()=> {setMessage(null)}, 5000)
       })
       .catch (error => {
+        setMessage(error.response.data.error)
+        setType('error')
+        setTimeout(()=> {setMessage(null)}, 5000)
         console.log(`Error creating : ${error.response.data.error}`)
       })
     }
@@ -112,7 +117,11 @@ const App = () => {
   }
 
   const handleFilter = (event) => {
-    setFilter(event.target.value)
+    const newQuery = event.target.value
+    setFilter(newQuery)
+    if (newQuery === '') {
+      setPersons(contacts.getAll().then(initilContacts => setPersons(initilContacts)))
+    }
     setPersons(persons.filter(person => person.name.toLowerCase().startsWith(filter.toLowerCase())))
   }
 
@@ -121,7 +130,7 @@ const App = () => {
     <div>
       <h2>Phonebook</h2>
       <Notification message={message} type={type} />
-      <Filter filter={filter} handleFilter={handleFilter} />
+      <Filter filter={filter} handleFilter={handleFilter} setPersons={setPersons} persons={persons} />
       <h3>add a new</h3>
       <PersonForm addNewPerson={addNewPerson} newName={newName} handleChange={handleChange} newNum={newNum} handleNumChange={handleNumChange}/>
       <h2>Numbers</h2>
