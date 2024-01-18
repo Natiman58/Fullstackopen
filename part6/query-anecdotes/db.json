@@ -1,0 +1,76 @@
+{
+  "anecdotes": [
+    {
+      "id": "47145",
+      "votes": 10
+    },
+    {
+      "content": "Adding manpower to a late software project makes it later!",
+      "id": "21149",
+      "votes": 11
+    },
+    {
+      "content": "The first 90 percent of the code accounts for the first 90 percent of the development time...The remaining 10 percent of the code accounts for the other 90 percent of the development time.",
+      "id": "69581",
+      "votes": 6
+    },
+    {
+      "content": "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.",
+      "id": "36975",
+      "votes": 6
+    },
+    {
+      "content": "Premature optimization is the root of all evil.",
+      "id": "25170",
+      "votes": 4
+    },
+    {
+      "id": "98312"
+    },
+    {
+      "content": "thats creating new Anecdote using quries react",
+      "id": "KyjUSnX",
+      "votes": null
+    },
+    {
+      "content": "vbfkd",
+      "votes": 6,
+      "id": "5AEkyJR"
+    },
+    {
+      "content": "bvfkhdbvfkdh",
+      "votes": 2,
+      "id": "U1TZ30M"
+    },
+    {
+      "content": "use redux took kit always",
+      "votes": 5,
+      "id": "CFM8XeV"
+    },
+    {
+      "content": "This the the anecdote of the year",
+      "votes": 9,
+      "id": "TxgvUS-"
+    },
+    {
+      "content": "use redux took kit always",
+      "votes": 4,
+      "id": "2v-ZN39"
+    },
+    {
+      "content": "use reducer",
+      "votes": 3,
+      "id": "UIoFbKn"
+    },
+    {
+      "content": "this is created using useReduser and context",
+      "votes": 2,
+      "id": "O8Xsvu_"
+    },
+    {
+      "content": "this is created using the use context",
+      "votes": 0,
+      "id": "EbfKx-N"
+    }
+  ]
+}
